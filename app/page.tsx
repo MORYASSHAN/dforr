@@ -125,7 +125,7 @@ export default function Home() {
     <main>
       <HeroField cards={moments} tiles={heroTiles}>
         <div className="hero__top"><span className="hero__name">DFORR</span></div>
-        <h1 className="display hero__title">Presence over feeds</h1>
+        <h1 className="display hero__title hero__title--sub">Presence over feeds</h1>
       </HeroField>
 
       <Chapter about="Problem" number={1} theme="ink">
