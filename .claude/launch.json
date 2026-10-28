@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dforr-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "env": {
+        "TEMP": "D:\\dffor\\.cache\\tmp",
+        "TMP": "D:\\dffor\\.cache\\tmp",
+        "NEXT_TELEMETRY_DISABLED": "1"
+      }
+    }
+  ]
+}
