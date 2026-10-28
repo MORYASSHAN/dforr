@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Tile, type TileName } from "@/components/art/Tiles";
 import { EarlyAccess } from "@/components/EarlyAccess";
 import { Features, type Feature } from "@/components/Features";
-import { Brand } from "@/components/Logo";
 import { HeroField, type Moment } from "@/components/HeroField";
 import { MayaPinned, type MayaStep } from "@/components/MayaPinned";
 import { Mission } from "@/components/Mission";
 import { SpatialCore } from "@/components/SpatialCore";
+import { TileFan, TileRibbon } from "@/components/TileFan";
 import { Arrow, Chapter, Marquee } from "@/components/ui";
 import { site } from "@/content/site";
 
@@ -57,7 +57,7 @@ const steps: MayaStep[] = [
 const features: Feature[] = [
   {
     title: "Live Amphitheater",
-    text: "Shows with up to 1 million people. With spatial audio, people close by will be louder and people far away will be quieter.",
+    text: "Shows with up to 1 million people.",
     facts: ["1,000,000 seats", "7.1.4 surround sound", "14 ms latency"],
     tiles: ["Sound", "Mosaic", "Sun"],
     bg: "#121012",
@@ -65,7 +65,7 @@ const features: Feature[] = [
   },
   {
     title: "Your companion",
-    text: "An AI that knows you. It knows what you told it last week, talks to you in real time and its face moves.",
+    text: "An AI that knows you.",
     facts: ["Remembers your week", "Real-time voice", "40+ expressions"],
     tiles: ["Lotus", "Peacock", "Jali"],
     bg: "#0e7a72",
@@ -73,7 +73,7 @@ const features: Feature[] = [
   },
   {
     title: "Bespoke Atelier",
-    text: "Couture that fits your measurements. The silk, velvet and zardozi all drape and move like real fabric.",
+    text: "Couture that fits your measurements.",
     facts: ["99.8% drape match", "Your own body scan", "Silk, velvet, zardozi"],
     tiles: ["Atelier", "Leheriya", "Arches"],
     bg: "#f3bfd6",
@@ -81,7 +81,7 @@ const features: Feature[] = [
   },
   {
     title: "Spatial Lenses",
-    text: "Facial and body lenses tracked on your phone. Rooms reconstructed in 3D using LiDAR.",
+    text: "Lenses tracked on your phone. Rooms rebuilt in 3D.",
     facts: ["Face and body tracking", "LiDAR room scans", "3D Gaussian splatting"],
     tiles: ["Peacock", "Kites", "Jali"],
     bg: "#2a3f9d",
@@ -97,7 +97,7 @@ const features: Feature[] = [
   },
   {
     title: "Private Rooms",
-    text: "Encrypted voice and messaging with friends. No ads or data brokers. If someone tries to screen record, it comes up black.",
+    text: "Encrypted voice and messaging with friends.",
     facts: ["Encrypted on your phone", "Recordings come up black", "No ads"],
     tiles: ["Shield", "Lotus", "Arches"],
     bg: "#5a2347",
@@ -124,42 +124,31 @@ export default function Home() {
   return (
     <main>
       <HeroField cards={moments} tiles={heroTiles}>
-        <div className="hero__top"><Brand /></div>
+        <div className="hero__top"><span className="hero__name">DFORR</span></div>
         <h1 className="display hero__title">Presence over feeds</h1>
       </HeroField>
 
       <Chapter about="Problem" number={1} theme="ink">
-        <h2 className="h2 problem__title" data-split>You watch everyone&apos;s week. You&apos;re nowhere in it.</h2>
-        <div className="problem__body">
-          <span className="small muted">About problem</span>
-          <p className="scrub" data-scrub>
-            Social apps have been making you scroll through a list of all your friends for the past 20 years. You see what everyone else is doing but
-            aren&apos;t actually there. We believe a social app should make you feel you are in the room.
+        <div className="center stack-lg">
+          <h2 className="h2" data-split>You watch everyone&apos;s week. You&apos;re nowhere in it.</h2>
+          <p className="scrub center-scrub" data-scrub>
+            You see what everyone else is doing but aren&apos;t actually there. We believe a social app should make you feel you are in the room.
           </p>
         </div>
-        <div className="problem__art">
-          {(["Leheriya", "Jali", "Sun", "Arches", "Kites"] as TileName[]).map((t, i) => (
-            <div key={t} className="field__tile" data-parallax={[0.1, 0.35, 0.2, 0.45, 0.15][i]} style={{ rotate: `${[-6, 4, -2, 7, -4][i]}deg` }}>
-              <Tile name={t} />
-            </div>
-          ))}
-        </div>
+        <TileFan tiles={["Leheriya", "Jali", "Kites", "Sun", "Arches", "Peacock", "Mosaic"]} size="lg" />
       </Chapter>
 
       <Chapter id="maya" about="Maya" number={2} theme="rose" pinned className="maya">
         <div className="maya__intro">
           <span className="small">For iPhone and Android</span>
           <h2 className="h2" data-split>Meet Maya.</h2>
-          <p className="lead" data-reveal>
-            Maya is a feedless social app. Go to places including live concerts with a million people, rooftop parties with 6 friends, a fitting room
-            that knows your measurements and a companion that knows how your week went.
-          </p>
+          <p className="lead" data-reveal>Maya is a feedless social app. Go to places, not feeds.</p>
         </div>
         <MayaPinned steps={steps} />
       </Chapter>
 
       <Chapter id="places" about="Places" number={3} theme="paper">
-        <div className="places__head">
+        <div className="places__head center">
           <span className="small muted">Where Maya takes you</span>
           <h2 className="h2" data-split>Six places to be. No feeds.</h2>
         </div>
@@ -181,10 +170,11 @@ export default function Home() {
           <div className="stat" data-reveal="0.24"><b><span data-count="120">0</span></b><span>Frames a second on a normal phone</span></div>
         </div>
         <p className="lead muted numbers__note" data-reveal>No headset required.</p>
+        <TileRibbon tiles={["Sound", "Kites", "Jali", "Coins", "Lotus", "Arches", "Peacock", "Sun", "Shield", "Leheriya", "Mosaic", "Atelier"]} />
       </Chapter>
 
       <Chapter id="engine" about="Engine" number={5} theme="ink2">
-        <div className="engine__head">
+        <div className="center stack-lg">
           <h2 className="h2" data-split>The engine underneath.</h2>
           <p className="lead muted" data-reveal>5 self-built systems. Choose one and drag.</p>
         </div>
@@ -192,7 +182,9 @@ export default function Home() {
       </Chapter>
 
       <Chapter id="mission" about="Mission" number={6} theme="rose">
-        <h2 className="h2 mission__title" data-split>Technology should bring people together, not lock them into feeds.</h2>
+        <div className="center">
+          <h2 className="h2 mission__title" data-split>Technology should bring people together, not lock them into feeds.</h2>
+        </div>
         <Mission />
       </Chapter>
 
@@ -200,20 +192,18 @@ export default function Home() {
         <div className="hire">
           <span className="small muted">Join the founding team</span>
           <h2 className="h2" data-split>We&apos;re looking to hire 12 engineers.</h2>
-          <p className="lead muted" data-reveal>
-            Mobile, graphics, audio, AI and security. Based in Jaipur. Can work remotely. All applications are reviewed by the founders. We don&apos;t look
-            at keywords, we look at your code.
-          </p>
+          <p className="lead muted" data-reveal>Mobile, graphics, audio, AI and security. Based in Jaipur. Can work remotely.</p>
           <div className="hire__roles" data-reveal>
             {roles.map(([id, label]) => <Link key={id} href={`/careers#${id}`}>{label}</Link>)}
           </div>
           <Link className="btn btn--ink" href="/careers" data-reveal>See all roles <Arrow /></Link>
         </div>
+        <TileFan tiles={["Mosaic", "Sound", "Lotus", "Shield", "Coins"]} />
       </Chapter>
 
       <Chapter about="Questions" number={8} theme="ink2">
         <div className="faq">
-          <h2 className="h2" data-split>Questions</h2>
+          <h2 className="h2 faq__title" data-split>Questions</h2>
           <div>
             {site.faq.map((f, i) => (
               <details key={f.q} className="qa" open={i === 0}>
@@ -229,6 +219,7 @@ export default function Home() {
         <EarlyAccess />
       </Chapter>
 
+      <TileRibbon tiles={["Kites", "Arches", "Lotus", "Jali", "Sun", "Peacock", "Leheriya", "Coins"]} reverse />
       <Marquee items={site.marquee} />
     </main>
   );

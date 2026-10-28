@@ -679,3 +679,66 @@ h1, h2, h3, h4 { font-weight: 400; }
 
 .pill__emblem .logo-mark { width: 30px !important; }
 .early__icon--logo { width: auto; height: auto; padding: 22px 24px; background: var(--ink-2); border: 1px solid rgba(227, 199, 157, .18); box-shadow: 0 0 90px 10px rgba(227, 199, 157, .14); }
+
+/* ---------- Centered layout ---------- */
+.center { display: grid; justify-items: center; text-align: center; }
+.center > .h2, .center > .display { max-width: 18ch; }
+.center .lead { max-width: 620px; }
+.stack-lg { gap: clamp(28px, 3vw, 44px); }
+
+/* ---------- Tile fan ---------- */
+.fan { position: relative; height: clamp(260px, 30vw, 420px); margin-top: var(--section-gap); width: 100%; }
+.fan__card { position: absolute; left: 50%; top: 50%; width: clamp(110px, 11vw, 170px); aspect-ratio: 3 / 4; margin: calc(clamp(110px, 11vw, 170px) * -0.667) 0 0 calc(clamp(110px, 11vw, 170px) * -0.5); }
+.fan--lg .fan__card { width: clamp(130px, 13vw, 200px); margin: calc(clamp(130px, 13vw, 200px) * -0.667) 0 0 calc(clamp(130px, 13vw, 200px) * -0.5); }
+.fan__face { width: 100%; height: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 50px rgba(0, 0, 0, .35); transition: transform .6s var(--ease); }
+.fan__face svg { width: 100%; height: 100%; }
+.fan__card:hover .fan__face { transform: translateY(-22px) scale(1.06); }
+
+/* ---------- Tile ribbon ---------- */
+.ribbon { overflow: hidden; padding-block: clamp(28px, 4vw, 56px); }
+.ribbon__track { display: flex; gap: clamp(14px, 1.6vw, 24px); width: max-content; animation: ribbon 60s linear infinite; }
+.ribbon--reverse .ribbon__track { animation-direction: reverse; }
+.ribbon__tile { width: clamp(110px, 10vw, 160px); aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; flex: none; transition: transform .6s var(--ease); }
+.ribbon__tile:hover { transform: translateY(-10px) scale(1.05); }
+.ribbon__tile svg { width: 100%; height: 100%; }
+.ribbon:hover .ribbon__track { animation-play-state: paused; }
+@keyframes ribbon { to { transform: translateX(-50%); } }
+
+/* Centered variants of existing sections */
+.center-scrub { max-width: 920px; }
+.faq { grid-template-columns: 1fr; justify-items: center; gap: clamp(40px, 5vw, 80px); }
+.faq__title { text-align: center; }
+.faq > div { width: min(880px, 100%); }
+.tabs { justify-content: center; }
+.foundation { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: clamp(32px, 4vw, 56px); }
+.foundation__copy { justify-items: center; max-width: 720px; }
+.foundation .demo { width: min(560px, 100%); text-align: left; }
+.pillar { justify-items: center; text-align: center; }
+.stat { justify-items: center; text-align: center; }
+.mission__title { max-width: 18ch; }
+.early { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: clamp(40px, 5vw, 72px); }
+.early__glow { left: 20%; width: 60%; }
+.early__copy { justify-items: center; }
+.early__panel { width: min(640px, 100%); text-align: left; }
+.early__art { display: flex; justify-content: center; }
+.early__tile { position: relative; left: auto !important; top: auto !important; margin-inline: -8px; }
+.hire .fan { margin-top: clamp(40px, 5vw, 80px); }
+.process > div { align-items: center; text-align: center; justify-content: flex-start; gap: 28px; }
+.process .process__tile { width: 96px; rotate: -4deg; transition: rotate .6s var(--ease), transform .6s var(--ease); }
+.process > div:hover .process__tile { rotate: 4deg; transform: translateY(-6px); }
+.roles__head { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+.filters { justify-content: safe center; }
+.c-intro { grid-template-columns: 1fr; }
+.h2, .display, .feature__title, .foundation h3 { text-wrap: balance; }
+.hero__name {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 52px);
+  letter-spacing: .3em;
+  margin-right: -.3em;
+  line-height: 1;
+  background: linear-gradient(110deg, var(--gold-2) 0%, #fff4e2 35%, var(--gold) 50%, #fff4e2 65%, var(--gold-2) 100%) 0 0 / 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-shine 6s ease-in-out infinite;
+}

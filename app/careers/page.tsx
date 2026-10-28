@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Tile, type TileName } from "@/components/art/Tiles";
 import { CareersRoles } from "@/components/CareersRoles";
 import { Brand } from "@/components/Logo";
+import { TileFan } from "@/components/TileFan";
 import { HeroField, type Moment } from "@/components/HeroField";
 import { Arrow, Chapter, Marquee } from "@/components/ui";
 import { jobs } from "@/content/jobs";
@@ -38,21 +39,17 @@ export default function Careers() {
       </HeroField>
 
       <Chapter about="Team" number={1} theme="rose">
-        <div className="c-intro">
+        <div className="c-intro center stack-lg">
           <h2 className="h2" data-split>Build the future beyond feeds.</h2>
-          <p className="lead" data-reveal>
-            We&apos;re building our first engineering team for Maya. {count} roles. Can work from Jaipur or remotely. Paid on performance and milestones.
-          </p>
+          <p className="lead" data-reveal>{count} roles. Can work from Jaipur or remotely. Paid on performance and milestones.</p>
         </div>
-        <div className="facts" style={{ marginTop: "clamp(40px, 5vw, 70px)" }}>
-          <div className="fact" data-reveal><b data-count={count}>0</b><span>Open roles</span></div>
-          <div className="fact" data-reveal="0.08"><b>Jaipur</b><span>Or remote</span></div>
-          <div className="fact" data-reveal="0.16"><b>Founders</b><span>Read every application</span></div>
-        </div>
+        <TileFan tiles={["Kites", "Mosaic", "Sound", "Lotus", "Shield", "Coins", "Arches"]} size="lg" />
       </Chapter>
 
       <Chapter about="Process" number={2} theme="paper">
-        <h2 className="h2" data-split>Show us what you can build.</h2>
+        <div className="center">
+          <h2 className="h2" data-split>Show us what you can build.</h2>
+        </div>
         <div className="process">
           {process.map((p, i) => (
             <div key={p.title} data-reveal={i * 0.08}>
