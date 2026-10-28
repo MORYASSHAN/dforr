@@ -304,9 +304,40 @@ h1, h2, h3, h4 { font-weight: 400; }
 .numbers__big { font-family: var(--serif); font-size: clamp(64px, 14vw, 240px); line-height: .85; letter-spacing: -.03em; }
 .numbers__label { font-size: 17px; font-weight: 500; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: var(--section-gap); position: relative; }
-.stat { padding: clamp(24px, 2.4vw, 36px); min-height: 200px; align-content: space-between; border-radius: 26px; background: var(--ink-2); border: 1px solid rgba(244, 239, 231, .07); display: grid; gap: 6px; }
-.stat b { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 3.6vw, 60px); line-height: 1; color: var(--rose); }
-.stat span { color: var(--muted); font-size: 15px; }
+.stat {
+  position: relative;
+  padding: clamp(28px, 2.8vw, 44px) clamp(20px, 2vw, 32px);
+  min-height: clamp(260px, 22vw, 340px);
+  border-radius: 30px;
+  background: var(--ink-2);
+  border: 1px solid rgba(244, 239, 231, .07);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform .6s var(--ease), border-color .4s;
+}
+.stat:hover { transform: translateY(-8px); border-color: rgba(243, 191, 214, .3); }
+.stat__icon { width: 54px; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; rotate: -5deg; transition: rotate .6s var(--ease), transform .6s var(--ease); }
+.stat:hover .stat__icon { rotate: 5deg; transform: scale(1.08); }
+.stat__icon svg { width: 100%; height: 100%; }
+.stat__num {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .08em;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(64px, 6.6vw, 120px);
+  line-height: .9;
+  letter-spacing: -.03em;
+  color: var(--rose);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.stat__num small { font-size: .38em; letter-spacing: 0; color: var(--gold); }
+.stat__label { color: var(--muted); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.4; max-width: 18ch; }
 .numbers__note { text-align: center; margin-top: 28px; }
 
 /* ---------- Engine (three.js) ---------- */
@@ -714,7 +745,6 @@ h1, h2, h3, h4 { font-weight: 400; }
 .foundation__copy { justify-items: center; max-width: 720px; }
 .foundation .demo { width: min(560px, 100%); text-align: left; }
 .pillar { justify-items: center; text-align: center; }
-.stat { justify-items: center; text-align: center; }
 .mission__title { max-width: 18ch; }
 .early { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: clamp(40px, 5vw, 72px); }
 .early__glow { left: 20%; width: 60%; }
@@ -746,3 +776,29 @@ h1, h2, h3, h4 { font-weight: 400; }
 .hero__top:has(.hero__name) { padding-top: clamp(40px, 8vh, 90px); }
 .hero__name { font-size: clamp(56px, 9vw, 170px); line-height: .9; }
 .hero__title--sub { margin-top: clamp(10px, 1.6vw, 22px); font-size: clamp(22px, 3.2vw, 58px); letter-spacing: .04em; }
+
+/* Ribbons inside a chapter run edge to edge */
+.chapter .ribbon { margin-inline: calc(var(--gutter) * -1); margin-top: var(--section-gap); }
+@media (max-width: 1000px) { .stat { min-height: 240px; } }
+.numbers__note { margin-top: clamp(48px, 6vw, 96px); font-family: var(--serif); text-transform: uppercase; font-size: clamp(26px, 2.8vw, 48px); color: var(--paper); letter-spacing: .02em; }
+
+/* Feature cards: compact */
+.features { gap: 5vh; max-width: 1180px; margin-inline: auto; }
+.feature { height: min(56vh, 520px); min-height: 380px; }
+.feature__inner { padding: clamp(28px, 3.4vw, 56px); gap: clamp(24px, 4vw, 64px); grid-template-columns: 1.1fr .9fr; border-radius: clamp(24px, 2.6vw, 40px); }
+.feature__copy { gap: clamp(12px, 1.4vw, 20px); }
+.feature__num { font-size: 13px; }
+.feature__title { font-size: clamp(32px, 3.6vw, 64px); }
+.feature__text { font-size: clamp(16px, 1.2vw, 19px); }
+.feature__facts { gap: 8px; margin-top: 4px; }
+.feature__facts li { padding: 8px 14px; font-size: 13px; }
+.feature__art { min-height: 260px; max-height: 100%; }
+.feature__tile { border-radius: 16px; }
+.feature__tile--main { width: 46%; left: 27%; margin-top: -31%; }
+.feature__tile--a { width: 25%; left: 4%; top: 12%; }
+.feature__tile--b { width: 28%; right: 4%; bottom: 10%; }
+@media (max-width: 860px) {
+  .feature { height: auto; min-height: 0; }
+  .feature__art { min-height: 220px; }
+  .feature__tile--main { margin-top: 0; top: 4%; width: 42%; left: 29%; }
+}

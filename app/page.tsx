@@ -105,6 +105,13 @@ const features: Feature[] = [
   },
 ];
 
+const stats: { value: number; decimals?: number; prefix?: string; unit?: string; label: string; tile: TileName }[] = [
+  { value: 15, unit: "m", label: "Distance before a voice fades", tile: "Sound" },
+  { value: 1.4, decimals: 1, unit: "ms", label: "Audio latency", tile: "Kites" },
+  { value: 99.8, decimals: 1, unit: "%", label: "Drape match on fabric", tile: "Atelier" },
+  { value: 120, unit: "fps", label: "On a normal phone", tile: "Mosaic" },
+];
+
 const roles = [
   ["mobile-platform-architect", "Mobile & Flutter"],
   ["graphics-shader-engineer", "3D graphics & shaders"],
@@ -164,10 +171,17 @@ export default function Home() {
           </div>
         </div>
         <div className="stats">
-          <div className="stat" data-reveal><b><span data-count="15">0</span> m</b><span>Distance before a voice fades</span></div>
-          <div className="stat" data-reveal="0.08"><b><span data-count="1.4" data-decimals="1">0</span> ms</b><span>Audio latency</span></div>
-          <div className="stat" data-reveal="0.16"><b><span data-count="99.8" data-decimals="1">0</span>%</b><span>Drape match on fabric</span></div>
-          <div className="stat" data-reveal="0.24"><b><span data-count="120">0</span></b><span>Frames a second on a normal phone</span></div>
+          {stats.map((st, i) => (
+            <div key={st.label} className="stat" data-reveal={i * 0.08}>
+              <span className="stat__icon" aria-hidden="true"><Tile name={st.tile} /></span>
+              <b className="stat__num">
+                {st.prefix}
+                <span data-count={st.value} data-decimals={st.decimals ?? 0}>0</span>
+                {st.unit && <small>{st.unit}</small>}
+              </b>
+              <span className="stat__label">{st.label}</span>
+            </div>
+          ))}
         </div>
         <p className="lead muted numbers__note" data-reveal>No headset required.</p>
         <TileRibbon tiles={["Sound", "Kites", "Jali", "Coins", "Lotus", "Arches", "Peacock", "Sun", "Shield", "Leheriya", "Mosaic", "Atelier"]} />
