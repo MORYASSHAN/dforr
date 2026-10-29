@@ -25,11 +25,13 @@ export function Features({ items }: { items: Feature[] }) {
     const el = root.current;
     if (!el || prefersReducedMotion()) return;
     const cards = gsap.utils.toArray<HTMLElement>(".feature", el);
+    // Cards only stick and stack on wider screens (see globals.css).
+    const stacked = matchMedia("(min-width: 861px)").matches;
     const ctx = gsap.context(() => {
       cards.forEach((card, i) => {
         // Shrink and dim each card as the next one slides over it.
         const next = cards[i + 1];
-        if (next) {
+        if (next && stacked) {
           gsap.to(card.querySelector(".feature__inner"), {
             scale: 0.92,
             filter: "brightness(0.55)",

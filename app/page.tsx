@@ -8,7 +8,7 @@ import { Mission } from "@/components/Mission";
 import { SpatialCore } from "@/components/SpatialCore";
 import { TileFan, TileRibbon } from "@/components/TileFan";
 import { Arrow, Chapter, Marquee } from "@/components/ui";
-import { site } from "@/content/site";
+import { mailto, site } from "@/content/site";
 
 const moments: Moment[] = [
   {
@@ -113,6 +113,13 @@ const stats: { value: number; decimals?: number; prefix?: string; unit?: string;
   { value: 120, unit: "fps", label: "On a normal phone", tile: "Mosaic" },
 ];
 
+// Honest status for investors and early users. Update as the company moves.
+const stage: { title: string; text: string; tile: TileName }[] = [
+  { title: "Now", text: "Maya's places, screens and engine are designed. We're turning them into a working app.", tile: "Kites" },
+  { title: "Next", text: "Hiring our founding engineering team. The open roles are just below.", tile: "Mosaic" },
+  { title: "Then", text: "Early access on iPhone and Android, starting with the people on our list.", tile: "Sun" },
+];
+
 const roles = [
   ["mobile-platform-architect", "Mobile & Flutter"],
   ["graphics-shader-engineer", "3D graphics & shaders"],
@@ -134,6 +141,7 @@ export default function Home() {
       <HeroField cards={moments} tiles={heroTiles}>
         <div className="hero__top"><span className="hero__name">DFORR</span></div>
         <h1 className="display hero__title hero__title--sub">Presence over feeds</h1>
+        <p className="hero__lede">Maya is a social app where you meet friends in live 3D places on your phone, instead of scrolling a feed.</p>
       </HeroField>
 
       <Chapter about="Problem" number={1} theme="ink">
@@ -148,14 +156,14 @@ export default function Home() {
 
       <Chapter id="maya" about="Maya" number={2} theme="rose" pinned className="maya">
         <div className="maya__intro">
-          <span className="small">Our first app</span>
+          <span className="small">Our first app · In development</span>
           <h2 className="h2" data-split>Meet Maya.</h2>
-          <p className="lead" data-reveal>A social app made of places, not posts. Here&apos;s one evening in it.</p>
+          <p className="lead" data-reveal>A social app made of places, not posts. Here&apos;s one evening in it, shown in design previews of the app.</p>
         </div>
         <MayaPinned steps={steps} />
       </Chapter>
 
-      <Chapter id="places" about="Places" number={3} theme="paper">
+      <Chapter id="places" about="Features" number={3} theme="paper">
         <div className="places__head center">
           <span className="small muted">That evening, and two places more</span>
           <h2 className="h2" data-split>Six places to be.</h2>
@@ -167,6 +175,7 @@ export default function Home() {
         <div className="numbers">
           <div className="blob" aria-hidden="true" data-parallax="0.08" />
           <div className="numbers__inner">
+            <span className="numbers__label">Built for</span>
             <span className="numbers__big" data-count="1000000">0</span>
             <span className="numbers__label">people in one live arena</span>
           </div>
@@ -184,14 +193,14 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="lead muted numbers__note" data-reveal>Here&apos;s what makes those numbers possible.</p>
+        <p className="lead muted numbers__note" data-reveal>The targets we&apos;re engineering to. Here&apos;s how.</p>
         <TileRibbon tiles={["Sound", "Kites", "Jali", "Coins", "Lotus", "Arches", "Peacock", "Sun", "Shield", "Leheriya", "Mosaic", "Atelier"]} />
       </Chapter>
 
       <Chapter id="engine" about="Engine" number={5} theme="ink2">
         <div className="center stack-lg">
           <h2 className="h2" data-split>The engine underneath.</h2>
-          <p className="lead muted" data-reveal>Five systems we built ourselves. Pick one and drag to look around.</p>
+          <p className="lead muted" data-reveal>Five systems we&apos;re building ourselves. Pick one and drag to look around.</p>
         </div>
         <SpatialCore />
       </Chapter>
@@ -203,7 +212,30 @@ export default function Home() {
         <Mission />
       </Chapter>
 
-      <Chapter about="Careers" number={7} theme="paper">
+      <Chapter id="stage" about="Stage" number={7} theme="ink2">
+        <div className="center stack-lg">
+          <span className="small muted">Pre-seed · Jaipur, India</span>
+          <h2 className="h2" data-split>Where we are.</h2>
+          <p className="lead muted" data-reveal>DFORR is a pre-seed startup. Maya is designed and in development. Here&apos;s the road from here.</p>
+        </div>
+        <div className="process stage__steps">
+          {stage.map((p, i) => (
+            <div key={p.title} data-reveal={i * 0.08}>
+              <div className="process__tile"><Tile name={p.tile} /></div>
+              <div>
+                <h3>{String(i + 1).padStart(2, "0")} · {p.title}</h3>
+                <p>{p.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="stage__cta" data-reveal>
+          <Link className="btn btn--rose" href="/#early">Join early access <Arrow /></Link>
+          <a className="btn btn--line" href={mailto("Investor enquiry")}><span>Investors: email the founders</span> <Arrow /></a>
+        </div>
+      </Chapter>
+
+      <Chapter about="Careers" number={8} theme="paper">
         <div className="hire">
           <span className="small muted">Join the founding team</span>
           <h2 className="h2" data-split>Help us build it.</h2>
@@ -216,7 +248,7 @@ export default function Home() {
         <TileFan tiles={["Mosaic", "Sound", "Lotus", "Shield", "Coins"]} />
       </Chapter>
 
-      <Chapter about="Questions" number={8} theme="ink2">
+      <Chapter about="Questions" number={9} theme="ink">
         <div className="faq">
           <h2 className="h2 faq__title" data-split>Questions</h2>
           <div>
@@ -230,7 +262,7 @@ export default function Home() {
         </div>
       </Chapter>
 
-      <Chapter id="early" about="Early access" number={9} theme="ink">
+      <Chapter id="early" about="Early access" number={10} theme="ink2">
         <EarlyAccess />
       </Chapter>
 

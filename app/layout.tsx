@@ -11,7 +11,7 @@ const sans = Geist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "8
 
 export const metadata: Metadata = {
   title: { default: "DFORR | Presence over feeds", template: "%s | DFORR" },
-  description: "Jaipur spatial computing lab. Building a feedless social app called Maya.",
+  description: "DFORR is a pre-seed startup in Jaipur building Maya, a social app where friends meet in live 3D places on their phones instead of scrolling a feed.",
 };
 
 export const viewport: Viewport = { themeColor: "#0b0a0b" };

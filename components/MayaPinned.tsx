@@ -31,7 +31,7 @@ export function MayaPinned({ steps }: { steps: MayaStep[] }) {
         scrollTrigger: {
           trigger: el,
           start: "top top",
-          end: `+=${steps.length * 90}%`,
+          end: `+=${steps.length * 70}%`,
           pin: true,
           scrub: 0.7,
           onUpdate: (self) => setActive(Math.min(steps.length - 1, Math.floor(self.progress * steps.length * 0.999))),

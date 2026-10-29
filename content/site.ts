@@ -25,9 +25,10 @@ export const site = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Maya", href: "/#maya" },
-    { label: "Places", href: "/#places" },
+    { label: "Features", href: "/#places" },
     { label: "Engine", href: "/#engine" },
     { label: "Mission", href: "/#mission" },
+    { label: "Where we are", href: "/#stage" },
     { label: "Careers", href: "/careers" },
     { label: "Early access", href: "/#early" },
   ],
@@ -51,6 +52,10 @@ export const site = {
       a: "DFORR's first app: places you visit with friends, instead of a feed you scroll.",
     },
     {
+      q: "Can I use Maya yet?",
+      a: "Not yet. Maya is in development. Leave your email at the bottom of this page and we'll tell you when your spot is ready.",
+    },
+    {
       q: "Do I need a VR headset?",
       a: "No. An iPhone or Android phone is all you need.",
     },
@@ -63,8 +68,8 @@ export const site = {
       a: "How you pay creators. 100 coins is always $1, and it goes straight to them.",
     },
     {
-      q: "How do I get early access?",
-      a: "Leave your email at the bottom of this page.",
+      q: "I'm an investor. Who do I talk to?",
+      a: "The founders read every email at dforrpvtltd@gmail.com.",
     },
   ],
 
@@ -74,7 +79,7 @@ export const site = {
         title: "Maya",
         links: [
           { label: "Live arenas", href: "/#maya" },
-          { label: "Places", href: "/#places" },
+          { label: "Features", href: "/#places" },
           { label: "The engine", href: "/#engine" },
           { label: "Early access", href: "/#early" },
         ],
@@ -83,6 +88,7 @@ export const site = {
         title: "Company",
         links: [
           { label: "Mission", href: "/#mission" },
+          { label: "Where we are", href: "/#stage" },
           { label: "Careers", href: "/careers" },
           { label: "Open roles", href: "/careers#roles" },
         ],

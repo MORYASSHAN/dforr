@@ -67,7 +67,7 @@ export function HeroField({ cards, tiles, children }: { cards: Moment[]; tiles: 
     if (!hero) return;
     const field = hero.querySelector<HTMLElement>(".field")!;
     const items = gsap.utils.toArray<HTMLElement>(".field__item", hero);
-    const title = hero.querySelector(".hero__title");
+    const title = hero.querySelectorAll(".hero__title, .hero__lede");
     const top = hero.querySelector(".hero__top");
     // Resting depth of each item, so every tween uses absolute values.
     const baseZ = new Map<HTMLElement, number>();

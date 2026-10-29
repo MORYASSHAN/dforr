@@ -1,4 +1,4 @@
-git/*
+/*
  * Open roles shown on /careers.
  * To add a role, copy one object below and edit it. To close a role, delete it
  * or set `open: false`. Domains become filter chips automatically.

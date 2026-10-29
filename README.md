@@ -70,16 +70,17 @@ The home page reads top to bottom as one story, and each fact has one home:
 
 | Chapter | Job in the story |
 | --- | --- |
-| Hero | The promise: presence over feeds. The cards are moments from one evening. |
+| Hero | The promise, plus one line saying what Maya is. The cards are moments from one evening. |
 | 1 Problem | Feeds make you an audience. |
-| 2 Maya | That same evening, step by step. No numbers yet. |
-| 3 Places | The six places, with what's in each. |
-| 4 Numbers | The proof. Hard numbers (1M, 15 m, 1.4 ms, 99.8%, 120 fps) live here only. |
+| 2 Maya | That same evening, step by step, in design previews. No numbers yet. |
+| 3 Features | The six places, with what's in each. |
+| 4 Numbers | Engineering targets (1M, 15 m, 1.4 ms, 99.8%, 120 fps). They live here only. |
 | 5 Engine | How it works, without repeating the numbers. |
 | 6 Mission | Why: no headset, privacy, any phone. |
-| 7–9 | Careers, short FAQ answers, early access. |
+| 7 Where we are | Pre-seed status, what's next, early access and investor contact. |
+| 8–10 | Careers, short FAQ answers, early access. |
 
-Avoid em dashes in visible text. Job descriptions in `content/jobs.ts` are DFORR's own wording.
+Maya is pre-launch, so describe what's measured as measured and what's planned as planned. Avoid em dashes in visible text. Job descriptions in `content/jobs.ts` are DFORR's own wording.
 
 ## Forms
 
