@@ -66,7 +66,20 @@ Everything respects the operating system's "reduce motion" setting.
 
 ## Copy
 
-The site text was run through cleverhumanizer.ai, then checked by hand to fix factual slips (for example "1Million" and a dropped "Keys"). Job descriptions in `content/jobs.ts` are DFORR's own wording and were left as they were.
+The home page reads top to bottom as one story, and each fact has one home:
+
+| Chapter | Job in the story |
+| --- | --- |
+| Hero | The promise: presence over feeds. The cards are moments from one evening. |
+| 1 Problem | Feeds make you an audience. |
+| 2 Maya | That same evening, step by step. No numbers yet. |
+| 3 Places | The six places, with what's in each. |
+| 4 Numbers | The proof. Hard numbers (1M, 15 m, 1.4 ms, 99.8%, 120 fps) live here only. |
+| 5 Engine | How it works, without repeating the numbers. |
+| 6 Mission | Why: no headset, privacy, any phone. |
+| 7–9 | Careers, short FAQ answers, early access. |
+
+Avoid em dashes in visible text. Job descriptions in `content/jobs.ts` are DFORR's own wording.
 
 ## Forms
 

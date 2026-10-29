@@ -40,7 +40,7 @@ export default function Careers() {
 
       <Chapter about="Team" number={1} theme="rose">
         <div className="c-intro center stack-lg">
-          <h2 className="h2" data-split>Build the future beyond feeds.</h2>
+          <h2 className="h2" data-split>Maya needs its first engineers.</h2>
           <p className="lead" data-reveal>{count} roles. Can work from Jaipur or remotely. Paid on performance and milestones.</p>
         </div>
         <TileFan tiles={["Kites", "Mosaic", "Sound", "Lotus", "Shield", "Coins", "Arches"]} size="lg" />

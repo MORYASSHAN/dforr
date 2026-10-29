@@ -10,7 +10,7 @@ const serif = Bodoni_Moda({ subsets: ["latin"], weight: ["400", "500"], variable
 const sans = Geist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: { default: "DFORR — Presence over feeds", template: "%s — DFORR" },
+  title: { default: "DFORR | Presence over feeds", template: "%s | DFORR" },
   description: "Jaipur spatial computing lab. Building a feedless social app called Maya.",
 };
 

@@ -15,7 +15,7 @@ const moments: Moment[] = [
     icon: "Sound",
     space: "Live arena",
     title: "Royal Mehrangarh Philharmonic. Front podium, tonight.",
-    text: "A million seats. Voices fade past 15 metres, so find your people.",
+    text: "Your friends are three rows ahead. Follow their voices.",
     people: ["AK", "RS", "MJ"],
     more: "+12",
     foot: "Starts 9:00 pm",
@@ -24,7 +24,7 @@ const moments: Moment[] = [
     icon: "Shield",
     space: "Private room",
     title: "Rooftop with the usual six. Voice room is open.",
-    text: "Encrypted on your phone. Recordings come up black.",
+    text: "Head up after the show.",
     people: ["NP", "DV"],
     more: "+4",
     foot: "Only friends can enter",
@@ -33,7 +33,7 @@ const moments: Moment[] = [
     icon: "Atelier",
     space: "Bespoke atelier",
     title: "Try the indigo silk kurta on your own scan.",
-    text: "Drape match 99.8%. Velvet and zardozi also in stock.",
+    text: "Wear it to the concert tonight.",
     foot: "Fitted to your measurements",
   },
   {
@@ -41,24 +41,25 @@ const moments: Moment[] = [
     space: "Your companion",
     title: "Run the second movement once more before bed?",
     text: "It remembers rehearsal ran late.",
-    foot: "BedRoom",
+    foot: "In your BedRoom",
   },
 ];
 
 const heroTiles: TileName[] = ["Jali", "Kites", "Mosaic", "Arches", "Peacock", "Leheriya", "Sun", "Coins", "Lotus", "Sound"];
 
+// One evening in Maya, in order. The hero cards above show the same evening.
 const steps: MayaStep[] = [
-  { screen: "arena", left: "A million", right: "in one room", text: "Live events with up to 1 million people. With spatial audio, people close by will be louder and people far away will be quieter." },
-  { screen: "companion", left: "Someone", right: "who remembers", text: "Your very own companion in your BedRoom. It knows what you told it last week, talks to you in real time and its face moves." },
-  { screen: "atelier", left: "Clothes", right: "that fit you", text: "Try on clothes based on your scan. The silk, velvet and zardozi all drape and move like real fabric. Get exactly what you saw." },
-  { screen: "rooms", left: "Rooms", right: "nobody records", text: "Private spaces for you and your friends. All calls and messages are encrypted on your phone. If someone tries to screen record, it comes up black." },
+  { screen: "atelier", left: "First,", right: "get dressed", text: "Try the indigo kurta on your own body scan. The silk falls the way it will when it arrives." },
+  { screen: "arena", left: "A million", right: "in one room", text: "The concert starts at nine. The crowd is huge, but the friends beside you sound close and strangers fade away." },
+  { screen: "rooms", left: "After,", right: "just your people", text: "The six of you head up to the rooftop. What's said there stays there." },
+  { screen: "companion", left: "Someone", right: "who remembers", text: "Back in your BedRoom, your companion knows rehearsal ran late and asks how it went." },
 ];
 
 const features: Feature[] = [
   {
     title: "Live Amphitheater",
-    text: "Shows with up to 1 million people.",
-    facts: ["1,000,000 seats", "7.1.4 surround sound", "14 ms latency"],
+    text: "Concerts you attend, not watch.",
+    facts: ["Front podium to balcony", "7.1.4 surround sound", "Reactions in sync"],
     tiles: ["Sound", "Mosaic", "Sun"],
     bg: "#121012",
     fg: "#f4efe7",
@@ -66,22 +67,22 @@ const features: Feature[] = [
   {
     title: "Your companion",
     text: "An AI that knows you.",
-    facts: ["Remembers your week", "Real-time voice", "40+ expressions"],
+    facts: ["Remembers your week", "Talks in real time", "40+ expressions"],
     tiles: ["Lotus", "Peacock", "Jali"],
     bg: "#0e7a72",
     fg: "#f4efe7",
   },
   {
     title: "Bespoke Atelier",
-    text: "Couture that fits your measurements.",
-    facts: ["99.8% drape match", "Your own body scan", "Silk, velvet, zardozi"],
+    text: "Couture cut to your measurements.",
+    facts: ["Your own body scan", "Silk, velvet, zardozi", "Moves like real fabric"],
     tiles: ["Atelier", "Leheriya", "Arches"],
     bg: "#f3bfd6",
     fg: "#5a2347",
   },
   {
     title: "Spatial Lenses",
-    text: "Lenses tracked on your phone. Rooms rebuilt in 3D.",
+    text: "Lenses that follow your face. Rooms rebuilt in 3D.",
     facts: ["Face and body tracking", "LiDAR room scans", "3D Gaussian splatting"],
     tiles: ["Peacock", "Kites", "Jali"],
     bg: "#2a3f9d",
@@ -89,16 +90,16 @@ const features: Feature[] = [
   },
   {
     title: "Creator Economy",
-    text: "Direct payments to creators. Always 100 coins = $1.",
-    facts: ["100 coins = $1", "Paid directly", "No middleman"],
+    text: "Support the artists you came to see.",
+    facts: ["100 coins = $1", "The rate never changes", "Paid straight to creators"],
     tiles: ["Coins", "Sun", "Mosaic"],
     bg: "#eaa21c",
     fg: "#121012",
   },
   {
     title: "Private Rooms",
-    text: "Encrypted voice and messaging with friends.",
-    facts: ["Encrypted on your phone", "Recordings come up black", "No ads"],
+    text: "A space that belongs to you and your friends.",
+    facts: ["Invite only", "Voice rooms and chat", "Encrypted end to end"],
     tiles: ["Shield", "Lotus", "Arches"],
     bg: "#5a2347",
     fg: "#f3bfd6",
@@ -139,7 +140,7 @@ export default function Home() {
         <div className="center stack-lg">
           <h2 className="h2" data-split>You watch everyone&apos;s week. You&apos;re nowhere in it.</h2>
           <p className="scrub center-scrub" data-scrub>
-            You see what everyone else is doing but aren&apos;t actually there. We believe a social app should make you feel you are in the room.
+            Feeds turned friends into an audience. You scroll past the concert, the dinner and the trip, then close the app feeling further away. A social app should put you in the room.
           </p>
         </div>
         <TileFan tiles={["Leheriya", "Jali", "Kites", "Sun", "Arches", "Peacock", "Mosaic"]} size="lg" />
@@ -147,17 +148,17 @@ export default function Home() {
 
       <Chapter id="maya" about="Maya" number={2} theme="rose" pinned className="maya">
         <div className="maya__intro">
-          <span className="small">For iPhone and Android</span>
+          <span className="small">Our first app</span>
           <h2 className="h2" data-split>Meet Maya.</h2>
-          <p className="lead" data-reveal>Maya is a feedless social app. Go to places, not feeds.</p>
+          <p className="lead" data-reveal>A social app made of places, not posts. Here&apos;s one evening in it.</p>
         </div>
         <MayaPinned steps={steps} />
       </Chapter>
 
       <Chapter id="places" about="Places" number={3} theme="paper">
         <div className="places__head center">
-          <span className="small muted">Where Maya takes you</span>
-          <h2 className="h2" data-split>Six places to be. No feeds.</h2>
+          <span className="small muted">That evening, and two places more</span>
+          <h2 className="h2" data-split>Six places to be.</h2>
         </div>
         <Features items={features} />
       </Chapter>
@@ -183,14 +184,14 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <p className="lead muted numbers__note" data-reveal>No headset required.</p>
+        <p className="lead muted numbers__note" data-reveal>Here&apos;s what makes those numbers possible.</p>
         <TileRibbon tiles={["Sound", "Kites", "Jali", "Coins", "Lotus", "Arches", "Peacock", "Sun", "Shield", "Leheriya", "Mosaic", "Atelier"]} />
       </Chapter>
 
       <Chapter id="engine" about="Engine" number={5} theme="ink2">
         <div className="center stack-lg">
           <h2 className="h2" data-split>The engine underneath.</h2>
-          <p className="lead muted" data-reveal>5 self-built systems. Choose one and drag.</p>
+          <p className="lead muted" data-reveal>Five systems we built ourselves. Pick one and drag to look around.</p>
         </div>
         <SpatialCore />
       </Chapter>
@@ -205,8 +206,8 @@ export default function Home() {
       <Chapter about="Careers" number={7} theme="paper">
         <div className="hire">
           <span className="small muted">Join the founding team</span>
-          <h2 className="h2" data-split>We&apos;re looking to hire 12 engineers.</h2>
-          <p className="lead muted" data-reveal>Mobile, graphics, audio, AI and security. Based in Jaipur. Can work remotely.</p>
+          <h2 className="h2" data-split>Help us build it.</h2>
+          <p className="lead muted" data-reveal>12 engineering roles across mobile, graphics, audio, AI and security. Based in Jaipur, open to remote.</p>
           <div className="hire__roles" data-reveal>
             {roles.map(([id, label]) => <Link key={id} href={`/careers#${id}`}>{label}</Link>)}
           </div>

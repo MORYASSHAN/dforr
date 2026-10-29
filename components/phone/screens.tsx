@@ -248,7 +248,7 @@ function Rooms() {
       <div className="ms-chat">
         <p className="ms-msg">Concert at 9? Front podium seats 🎻</p>
         <p className="ms-msg ms-msg--me">In. Saving you a spot.</p>
-        <p className="ms-msg">Voice room open — come hang.</p>
+        <p className="ms-msg">Voice room open, come hang.</p>
       </div>
       <div className="ms-call">
         <span className="ms-ico"><Icon name="mic" /></span>

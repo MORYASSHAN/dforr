@@ -12,11 +12,11 @@ const CoreScene = dynamic(() => import("./three/CoreScene"), {
 });
 
 const dimensions: { mode: CoreMode; idx: string; title: string; sub: string; text: string }[] = [
-  { mode: "spatial", idx: "01", title: "Spatial", sub: "Gyroscope view", text: "Tilt your phone to move around the room, using your phone's gyroscope." },
-  { mode: "acoustic", idx: "02", title: "15 m", sub: "1.4 ms latency", text: "Voices get quieter the further away you are, so a crowd breaks up into lots of little conversations." },
-  { mode: "embodied", idx: "03", title: "Embodied", sub: "40+ expressions", text: "Breathing avatars. Over 40 facial expressions." },
-  { mode: "metric", idx: "04", title: "Metric", sub: "99.8% drape match", text: "Clothes simulated on your measurements, not a mannequin's." },
-  { mode: "secure", idx: "05", title: "Private", sub: "Zero-knowledge", text: "Keys are kept on your phone. Your calls can't be read by our servers." },
+  { mode: "spatial", idx: "01", title: "Spatial", sub: "Gyroscope view", text: "Your phone's motion sensors move the camera, so tilting the phone is how you look around." },
+  { mode: "acoustic", idx: "02", title: "Acoustic", sub: "Positional sound", text: "Each voice comes from where that person stands and fades with distance, so a crowd breaks into small conversations." },
+  { mode: "embodied", idx: "03", title: "Embodied", sub: "Living faces", text: "Avatars breathe and change expression the way people do." },
+  { mode: "metric", idx: "04", title: "Metric", sub: "Cloth physics", text: "Fabric is simulated on your measurements, not a mannequin's." },
+  { mode: "secure", idx: "05", title: "Private", sub: "Zero-knowledge", text: "Keys are made and kept on your phone. Our servers pass calls along but can't read them." },
 ];
 
 export function SpatialCore() {

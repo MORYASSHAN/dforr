@@ -1,4 +1,4 @@
-/*
+git/*
  * Open roles shown on /careers.
  * To add a role, copy one object below and edit it. To close a role, delete it
  * or set `open: false`. Domains become filter chips automatically.
@@ -127,7 +127,7 @@ export const jobs: Job[] = [
     location: "Jaipur, India / Remote Available",
     reward: "Performance-Based & Milestone Rewards",
     about:
-      "Architect Maya's autonomous cognitive companion — a lifelong conversational intelligence living in the personal BedRoom sanctuary. You will build continuous 3-tier memory graphs, low-latency streaming inference, and emotional prosody synthesis.",
+      "Architect Maya's autonomous cognitive companion, a lifelong conversational intelligence living in the personal BedRoom sanctuary. You will build continuous 3-tier memory graphs, low-latency streaming inference, and emotional prosody synthesis.",
     responsibilities: [
       "Architect the 3-tier cognitive memory graph: Permanent Core identity, Rolling Gist summaries, and Episodic vector recall.",
       "Deploy streaming inference pipelines on vLLM and TensorRT-LLM achieving sub-180ms Time-to-First-Token (TTFT).",

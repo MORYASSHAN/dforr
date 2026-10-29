@@ -1,7 +1,8 @@
 /*
  * DFORR site content.
  * Edit this file to change shared text without touching layout code.
- * Copy was run through cleverhumanizer.ai, then checked by hand for accuracy.
+ * The home page reads as one story (see "Copy" in README.md), so check a
+ * change here doesn't repeat something a section already says.
  */
 
 export type ScreenName = "home" | "arena" | "companion" | "atelier" | "rooms";
@@ -31,38 +32,39 @@ export const site = {
     { label: "Early access", href: "/#early" },
   ],
 
+  // Read in order, these follow the home page story: problem, the evening, why.
   marquee: [
-    "15-metre positional sound",
-    "Encrypted voice rooms",
-    "120 FPS on a normal phone",
-    "1,000,000 people in one arena",
-    "No feeds",
-    "100 coins = $1",
+    "Presence over feeds",
+    "Be in the room",
+    "Dress for it",
+    "Hear who's near",
+    "Just your people",
+    "Someone who remembers",
     "Pay creators directly",
-    "LiDAR room scans",
     "Made in Jaipur",
   ],
 
+  // Short answers. The home page tells the full story, so these don't repeat it.
   faq: [
     {
       q: "What is Maya?",
-      a: "A feedless social app from DFORR. Meet people in real 3D spaces including concerts, friend rooms and a fitting room. Plus an AI companion.",
+      a: "DFORR's first app: places you visit with friends, instead of a feed you scroll.",
     },
     {
       q: "Do I need a VR headset?",
-      a: "No. It runs on a standard iPhone or Android. Simply tilt your phone.",
+      a: "No. An iPhone or Android phone is all you need.",
     },
     {
       q: "How is my privacy protected?",
-      a: "All calls are encrypted on your phone. Screen recordings come up black. We won't create profiles or sell your data.",
+      a: "Calls are encrypted before they leave your phone and screen recordings come up black. We don't build profiles or sell your data.",
     },
     {
       q: "What are Maya Coins?",
-      a: "The currency to pay creators directly. Always 100 coins = $1.",
+      a: "How you pay creators. 100 coins is always $1, and it goes straight to them.",
     },
     {
       q: "How do I get early access?",
-      a: "Fill in your email at the bottom of this page and we'll contact you when there's a spot.",
+      a: "Leave your email at the bottom of this page.",
     },
   ],
 
@@ -86,7 +88,7 @@ export const site = {
         ],
       },
     ] as { title: string; links: FooterLink[] }[],
-    tagline: "Real life happens offline. Maya just gets you there.",
+    tagline: "Stop watching. Be there.",
   },
 
   /*

@@ -25,7 +25,7 @@ export function EarlyAccess() {
         <div className="early__icon early__icon--logo" data-reveal><LogoMark size={64} /></div>
         <h2 className="h2" data-split>Leave the feed early.</h2>
         <p className="lead muted" data-reveal>
-          Early access available on iPhone and Android. Fill in your email below and we&apos;ll contact you when there&apos;s a spot.
+          Early access is opening on iPhone and Android. Leave your email and we&apos;ll let you know when there&apos;s a spot.
         </p>
       </div>
 
@@ -55,12 +55,12 @@ export function EarlyAccess() {
             </button>
           </div>
           <p className="early__note" aria-live="polite">
-            {sent ? "Your email app should open now. Send it and you're on the list." : "We only email when there's a spot for you."}
+            {sent ? "Your email app should open now. Send it and you're on the list." : "No newsletters. Just the one email."}
           </p>
         </form>
         <ul className="early__points">
-          <li><b>iPhone and Android</b><span>Same app on both.</span></li>
-          <li><b>No headset</b><span>Works on the phone you have.</span></li>
+          <li><b>Come as you are</b><span>The phone you have is enough.</span></li>
+          <li><b>Bring your people</b><span>Invite friends into your rooms.</span></li>
         </ul>
       </div>
     </div>

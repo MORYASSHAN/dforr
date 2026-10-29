@@ -90,7 +90,7 @@ function ApplyDialog({ job, onClose }: { job: Job | null; onClose: () => void })
       "A hard problem I solved:",
       String(f.get("agency") || "—"),
     ].join("\n");
-    window.location.href = mailto(`Application — ${job.title}`, site.company.careersEmail, body);
+    window.location.href = mailto(`Application: ${job.title}`, site.company.careersEmail, body);
     e.currentTarget.reset();
     onClose();
   };
